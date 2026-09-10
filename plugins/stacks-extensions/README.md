@@ -29,7 +29,7 @@ More stacks follow.
 Either add the marketplace and install from it, which also brings updates:
 
 ```
-claude plugin marketplace add <account>/<repo>
+claude plugin marketplace add MarceloLang/stacks-extensions
 claude plugin install stacks-extensions@stacks-extensions
 ```
 
