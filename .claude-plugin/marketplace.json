@@ -1,0 +1,23 @@
+{
+  "name": "stacks-extensions",
+  "owner": {
+    "name": "Marcello Lang",
+    "email": "accounts@marcello-lang.de"
+  },
+  "description": "Claude support for the RapidWeaver stacks sold at stacks-extensions.de. Gives Claude the exact settings and pitfalls of each stack when building pages with the Stacks app.",
+  "plugins": [
+    {
+      "name": "stacks-extensions",
+      "source": "./plugins/stacks-extensions",
+      "description": "Build RapidWeaver pages with the Stacks app using the Doorman, iFrame Resize and F6 Off Canvas stacks. Gives Claude the exact settings, field names and pitfalls for each stack.",
+      "category": "web-development",
+      "keywords": [
+        "rapidweaver",
+        "stacks",
+        "doorman",
+        "iframe",
+        "foundation"
+      ]
+    }
+  ]
+}
