@@ -9,7 +9,7 @@
     {
       "name": "stacks-extensions",
       "source": "./plugins/stacks-extensions",
-      "description": "Build RapidWeaver pages with the Stacks app using the Doorman, iFrame Resize and F6 Off Canvas stacks. Gives Claude the exact settings, field names and pitfalls for each stack.",
+      "description": "Build RapidWeaver pages with the Stacks app using the Doorman, iFrame Resize, F6 Off Canvas and CSS & JS Files stacks. Gives Claude the exact settings, field names and pitfalls for each stack.",
       "category": "web-development",
       "keywords": [
         "rapidweaver",
