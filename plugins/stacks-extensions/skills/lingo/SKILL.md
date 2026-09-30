@@ -15,10 +15,10 @@ layout exists once; texts are swapped on the server.
 |---|---|---|
 | Lingo Base | `de.marcello-lang.stacks.lingo-base` | Languages of the page (once, at the top) |
 | Lingo Text | `de.marcello-lang.stacks.lingo-text` | Wraps any stacks and translates their texts |
-| Lingo Entry | `de.marcello-lang.stacks.lingo-eintrag` | One text and its translations, inside a Lingo Text |
+| Lingo Entry | `de.marcello-lang.stacks.lingo-entry` | One text and its translations, inside a Lingo Text |
 | Lingo Block | `de.marcello-lang.stacks.lingo-block` | Content that differs per language (only shown in its language) |
 | Lingo Switch | `de.marcello-lang.stacks.lingo-switch` | Language switcher for visitors |
-| Lingo Solo | `de.marcello-lang.stacks.lingo-seite` | This page in one language only |
+| Lingo Solo | `de.marcello-lang.stacks.lingo-solo` | This page in one language only |
 
 The bundle `de.marcello-lang.stacks.lingo` is a hidden container. Always
 place the child stacks.
