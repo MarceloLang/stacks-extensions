@@ -4,7 +4,7 @@ This bundle has no settings of its own. It installs the stacks below, each with 
 
 ## CSS File: settings
 
-Stack version 1.0.5 (build 105), stack id `de.marcello-lang.stacks.css-file`.
+Stack version 1.0.6 (build 106), stack id `de.marcello-lang.stacks.css-file`.
 
 The **Field** column is the name to use when writing with `stacks_set_stack_properties`. Reading returns the same name as `uid`, alongside a `valueKeyPath` of `custom.<field>`. That longer form is for reading only, writing with it is silently rejected.
 
@@ -56,7 +56,7 @@ Set the **value**, not the label.
 
 ## JS File: settings
 
-Stack version 1.0.5 (build 105), stack id `de.marcello-lang.stacks.js-file`.
+Stack version 1.0.6 (build 106), stack id `de.marcello-lang.stacks.js-file`.
 
 The **Field** column is the name to use when writing with `stacks_set_stack_properties`. Reading returns the same name as `uid`, alongside a `valueKeyPath` of `custom.<field>`. That longer form is for reading only, writing with it is silently rejected.
 

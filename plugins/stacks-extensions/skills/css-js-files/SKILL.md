@@ -2,7 +2,7 @@
 name: css-js-files
 description: Use when building or editing a page in the Stacks app (or RapidWeaver) with the CSS File or JS File stack from the CSS & JS Files bundle, putting your own CSS or JavaScript into the page's own files instead of the page source, grouping several code blocks with "More code", or keeping a page with a lot of custom code tidy in the edit window. Also use when the user mentions "CSS File", "JS File", "CSS & JS Files", files/stacks.css, files/stacks.js, or asks why a code block shows up empty in the published file.
 metadata:
-  documents-stack-version: "1.0.5"
+  documents-stack-version: "1.0.6"
   vendor: stacks-extensions.de
 ---
 
