@@ -1,6 +1,6 @@
 # F6+ Off Canvas: settings
 
-Stack version 1.1.2 (build 112), stack id `de.marcello-lang.stacks.f6-off-canvas`.
+Stack version 1.1.3 (build 113), stack id `de.marcello-lang.stacks.f6-off-canvas`.
 
 The **Field** column is the name to use when writing with `stacks_set_stack_properties`. Reading returns the same name as `uid`, alongside a `valueKeyPath` of `custom.<field>`. That longer form is for reading only, writing with it is silently rejected.
 
@@ -20,6 +20,8 @@ The **Field** column is the name to use when writing with `stacks_set_stack_prop
 | `textModus` | Text colours | Appearance | select | `theme` |  | Theme: text and links keep the colours the menu or the theme brings along, for example through Foundation's Menu Styles. Custom: text and link colour for everything in the bar from the field below, with any layout. |
 | `textFarben` | Text | Appearance | color-2 | `rgba(15,15,15,1.00), rgba(15,15,15,0.65)` | `textModus` == `eigen` | Text colour and link colour on hover. |
 | `scrollModus` | When scrolled | Appearance | select | `eigen` |  | From a certain scroll height the bar changes color and gets a shadow. Only pick “with GSAP” if GSAP is on the page anyway (Joe Workman’s stacks bring it along); if it is missing, the stack uses its own JavaScript. |
+| `vorScroll` | Before scrolling | Appearance | select | `gleich` | `scrollModus` != `aus` | What the bar looks like while the page is at the very top. Same as scrolled: no difference, a layout with blur is blurred from the start. Own color: the color below, without blur; only on scrolling does the bar switch to its look, blur included. Transparent: the same, just without any color. The line under the bar stays in every case. |
+| `bgFarbeOben` | Color before | Appearance | color | `rgba(253,244,226,1.00)` | `vorScroll` == `farbe` | Color of the bar as long as nothing has been scrolled. Usually the background color of the page, so at the top the bar looks like part of it. Only takes effect if something is set under “When scrolled”. |
 | `schatten` | Shadow | Appearance | checkbox | `true` | `scrollModus` != `aus` | A fine shadow under the bar once the page has been scrolled. |
 | `schattenMass` | Shadow size | Appearance | number-3 | `4, 13, -8` | `schatten` == `true` | Downward offset, blur and spread of the shadow in pixels. A negative spread pulls the shadow back under the bar, so it only shows as a fine edge at the bottom. |
 | `schattenFarbe` | Shadow colour | Appearance | color | `rgba(0,0,0,0.60)` | `schatten` == `true` | Colour and opacity of the shadow. |
@@ -101,6 +103,14 @@ Set the **value**, not the label.
 | `aus` | leave it alone |
 | `eigen` | with its own JavaScript |
 | `gsap` | with GSAP ScrollTrigger |
+
+**`vorScroll`**: Before scrolling
+
+| Value | Label |
+|---|---|
+| `gleich` | same as scrolled |
+| `farbe` | own color, not blurred |
+| `durch` | transparent |
 
 **`gsapLaden`**: If GSAP is missing
 
