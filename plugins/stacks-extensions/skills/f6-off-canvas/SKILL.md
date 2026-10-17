@@ -2,7 +2,7 @@
 name: f6-off-canvas
 description: Use when building or editing a RapidWeaver page in the Stacks app that uses the F6+ Off Canvas stack, a top bar that stays put while the Foundation 6 off-canvas menu opens, with drop zones for a logo, the main menu, an area next to the hamburger button and optionally your own button. Also use when the user mentions "F6+ Off Canvas", "F6 Off Canvas", an off-canvas bar, a hamburger menu for Foundation 6, or asks why the menu shows twice, why the bar disappears when the menu opens, or which Foundation stacks go into the bar.
 metadata:
-  documents-stack-version: "1.1.3"
+  documents-stack-version: "1.1.4"
   vendor: stacks-extensions.de
 ---
 

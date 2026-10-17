@@ -1,6 +1,6 @@
 # F6+ Off Canvas: settings
 
-Stack version 1.1.3 (build 113), stack id `de.marcello-lang.stacks.f6-off-canvas`.
+Stack version 1.1.4 (build 114), stack id `de.marcello-lang.stacks.f6-off-canvas`.
 
 The **Field** column is the name to use when writing with `stacks_set_stack_properties`. Reading returns the same name as `uid`, alongside a `valueKeyPath` of `custom.<field>`. That longer form is for reading only, writing with it is silently rejected.
 
@@ -22,6 +22,8 @@ The **Field** column is the name to use when writing with `stacks_set_stack_prop
 | `scrollModus` | When scrolled | Appearance | select | `eigen` |  | From a certain scroll height the bar changes color and gets a shadow. Only pick “with GSAP” if GSAP is on the page anyway (Joe Workman’s stacks bring it along); if it is missing, the stack uses its own JavaScript. |
 | `vorScroll` | Before scrolling | Appearance | select | `gleich` | `scrollModus` != `aus` | What the bar looks like while the page is at the very top. Same as scrolled: no difference, a layout with blur is blurred from the start. Own color: the color below, without blur; only on scrolling does the bar switch to its look, blur included. Transparent: the same, just without any color. The line under the bar stays in every case. |
 | `bgFarbeOben` | Color before | Appearance | color | `rgba(253,244,226,1.00)` | `vorScroll` == `farbe` | Color of the bar as long as nothing has been scrolled. Usually the background color of the page, so at the top the bar looks like part of it. Only takes effect if something is set under “When scrolled”. |
+| `uebergang` | Transition | Appearance | number | `0` | `scrollModus` != `aus` | How the bar changes to its scrolled look, in pixels. 0: from “From pixel” on it fades over in 0.3 seconds. More than 0: it fades over across that many scrolled pixels, step by step as you scroll, and goes back the same way when you scroll up. Around 150 gives a soft change that smooths out the jump in color from the top of the page to the content below. |
+| `nachlauf` | Lag | Appearance | select | `0.6` | `scrollModus` == `gsap` | Only with GSAP and a transition above 0: how long the transition trails softly behind the scrolling instead of being locked to it. None: the bar follows the scrolling directly. Visitors who have reduced motion turned on in their system get no lag. |
 | `schatten` | Shadow | Appearance | checkbox | `true` | `scrollModus` != `aus` | A fine shadow under the bar once the page has been scrolled. |
 | `schattenMass` | Shadow size | Appearance | number-3 | `4, 13, -8` | `schatten` == `true` | Downward offset, blur and spread of the shadow in pixels. A negative spread pulls the shadow back under the bar, so it only shows as a fine edge at the bottom. |
 | `schattenFarbe` | Shadow colour | Appearance | color | `rgba(0,0,0,0.60)` | `schatten` == `true` | Colour and opacity of the shadow. |
@@ -111,6 +113,15 @@ Set the **value**, not the label.
 | `gleich` | same as scrolled |
 | `farbe` | own color, not blurred |
 | `durch` | transparent |
+
+**`nachlauf`**: Lag
+
+| Value | Label |
+|---|---|
+| `0` | none |
+| `0.3` | short (0.3 s) |
+| `0.6` | medium (0.6 s) |
+| `1` | long (1 s) |
 
 **`gsapLaden`**: If GSAP is missing
 
