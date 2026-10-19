@@ -164,7 +164,13 @@ kept in one language), while the rest of the site stays multilingual.
    - **"Not found on the page" may legitimately keep entries**: texts that only
      appear in some states or records (an empty-search message, a "New" badge,
      a 404 variant, a section that only some records have). Keep those entries;
-     check each listed text against that rule instead of deleting it.
+     check each listed text against that rule instead of deleting it, and mark
+     each one with a **"?" in front of its first line** (`? My account`). A
+     marked entry is translated like any other but no longer reported as
+     missing, so the notice stays meaningful for real typos.
+   - Lingo Base has a master switch **"Report missing texts"** (`pruefen`).
+     Off silences every Lingo Text on the page (demos, screenshots); on, each
+     Lingo Text's own switch decides. Leave it on while translating.
 4. **Add entries in page order**: first entry with `stacks_add_stack` into the
    entry slot (`placement: inside`), each further one `placement: after` the
    previous entry. Then `stacks_set_stack_text_area` (`textIndex: 1`) and
