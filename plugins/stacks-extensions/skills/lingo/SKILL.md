@@ -155,8 +155,11 @@ kept in one language), while the rest of the site stays multilingual.
    Give it a title (`default###userTitle`, e.g. "Translation: Hero").
 3. **Collect the texts from the preview, don't guess them.** Open the preview
    (glasses icon) and fetch the page from the local preview server
-   (`127.0.0.1:<port>`). Under each Lingo Text a yellow notice lists
-   "Texts without an entry" and "Not found on the page". The notice appears on
+   (`127.0.0.1:<port>`). A yellow panel at the bottom right collects the
+   notices of every Lingo Text on the page, headed by each Lingo Text's title
+   (so give them titles), and lists "Texts without an entry" and "Not found on
+   the page"; the same lines go to the browser console as warnings. In fetched
+   HTML the panel is at the very end of the document. The panel appears on
    every local address: `localhost`, `127.0.0.1` and names ending in `.test`,
    so a locally served export of the site shows it too (useful when the
    preview lacks files referenced from the site root).
