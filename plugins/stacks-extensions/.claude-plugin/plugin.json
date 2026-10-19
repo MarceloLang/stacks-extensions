@@ -1,6 +1,6 @@
 {
     "name": "stacks-extensions",
-    "version": "0.1.11",
+    "version": "0.1.13",
     "description": "Helps Claude drive the Stacks app to build RapidWeaver pages with the stacks from stacks-extensions.de: Doorman, iFrame Resize, F6 Off Canvas, CSS & JS Files and Lingo. Carries each stack's exact field names, option values and known pitfalls.",
     "author": {
         "name": "Marcello Lang",

@@ -1,6 +1,6 @@
 # F6+ Off Canvas: settings
 
-Stack version 1.1.4 (build 114), stack id `de.marcello-lang.stacks.f6-off-canvas`.
+Stack version 1.1.6 (build 116), stack id `de.marcello-lang.stacks.f6-off-canvas`.
 
 The **Field** column is the name to use when writing with `stacks_set_stack_properties`. Reading returns the same name as `uid`, alongside a `valueKeyPath` of `custom.<field>`. That longer form is for reading only, writing with it is silently rejected.
 
@@ -12,6 +12,8 @@ The **Field** column is the name to use when writing with `stacks_set_stack_prop
 | `padding` | Padding | General | number-4 | `8, 8, 8, 8` |  | Inner spacing of the bar in pixels, top, bottom, left and right set separately. Left or right is also the distance of the menu button from the window edge. |
 | `klasse` | CSS class | General | input | `` |  | Your own class on the bar, in case you want to style it yourself. Leave empty if you do not need it. |
 | `breite` | Content width | General | number | `0` |  | Maximum width of the bar’s content in pixels, centered. 0 means full width. Set it to the content width of your page, and the menu and the area next to the button line up with the rest of the content. |
+| `platzLassen` | Content below the bar | General | checkbox | `false` |  | Lets the page content start below the fixed bar instead of behind it. The stack keeps measuring the bar’s height on the page, even when it changes, and keeps that much space free at the top of the Off Canvas stack’s content area. Anchor links keep the same distance. Leave it off if the content should start behind the bar, for example with an image reaching all the way up. Either way, the measured height is available as the CSS variable --f6oc-kopf-h. Nothing changes in the edit window. |
+| `leisteTag` | HTML element | General | select | `div` |  | Which element the bar outputs on the page. header marks it as the page header, which helps screen readers and search engines understand the page. A header must not contain another header: if the bar already sits in a container with the tag header, keep div. The look does not change. |
 | `layout` | Layout | Appearance | select | `eigen` |  | Ready-made look for the bar and the menu button. Custom: the colors below. Foundation: top bar background and link colors from Site Styles (site-wide values, not a single Menu Styles preset). Neo-Brutal look: tinted bar with a thick line, yellow button with border and hard shadow. Glass: translucent, blurred bar and a round glass button. |
 | `knopfSeite` | Alignment | Appearance | select | `rechts` | `knopfAn` == `true` | Which side the hamburger menu sits on, right or left. |
 | `bgFarbe` | Background | Appearance | color | `rgba(241,239,113,1.00)` | `layout` == `eigen` | Color of the bar. For “transparent” set the opacity to 0. |
@@ -30,6 +32,7 @@ The **Field** column is the name to use when writing with `stacks_set_stack_prop
 | `gsapLaden` | If GSAP is missing | Appearance | select | `nein` | `scrollModus` == `gsap` | What to do when GSAP is not on the page. “From your own folder” takes it from rw_common/plugins/stacks/gsap/, where Joe Workman’s stacks put it. “From someone else’s server” fetches it from the web, and that server learns the addresses of your visitors. |
 | `logoAn` | Add logo area? | Logo | checkbox | `true` |  | A drop zone at the left of the bar, for a logo or a wordmark. Freshly placed it already holds a Foundation SVG stack. It wraps around its content, the menu next to it takes the rest. Switched off it is not created at all: what sits inside stays out of the page source and is hidden in the edit window. Nothing is lost, it all comes back when you switch it on again. |
 | `logoImMenue` | Logo stays put when the menu opens | Logo | checkbox | `false` | `logoAn` == `true` | Works when the off-canvas menu opens from the left (position Left in the Off Canvas Panel), whether the menu button is on the left or the right. Off: when the menu opens, the logo moves right with the page. On: the logo stays in place and so sits at the top of the opened menu; the main menu moves into the space where the logo was. If the menu opens from the right, the switch changes nothing. |
+| `logoMenue` | Logo in menu | Logo | select | `aus` | `logoAn` == `true` | Works when the off-canvas menu opens from the right. Also shows the logo from the bar at the top of the opened menu, level with the menu button. “Stays put”: the logo does not move, the edge of the menu reveals and covers it as it slides in and out. “Moves along”: the logo slides with the menu and disappears just before the button as if under a cover, instead of peeking out behind it. If the menu opens from the left, “Logo stays put when the menu opens” applies instead. |
 | `logoBreite` | Width | Logo | number | `0` | `logoAn` == `true` | Fixed width of the area. 0 means as wide as its content. A fixed width pays off when several pages should line up even though the logos differ in width. |
 | `logoEinheit` | Unit | Logo | select | `px` | `logoAn` == `true` | Unit of the width. Pixels stay the same, rem follows the page font size and grows when the visitor enlarges it. |
 | `logoAbstand` | Gap | Logo | number | `24` | `logoAn` == `true` | Gap in pixels between the logo and the menu next to it. |
@@ -66,14 +69,20 @@ The **Field** column is the name to use when writing with `stacks_set_stack_prop
 | `kanteFarbe` | Base colour | Hamburger frame | color | `rgba(201,147,0,1.00)` | `sockelAn` == `true` | Colour of the base, usually a darker shade of the background colour. |
 | `bleibtAn` | Show area | Left of the hamburger menu | checkbox | `true` |  | A second drop zone next to the menu button, for example for a language switch or a cart. It moves with the page when the menu opens and stays visible at the edge of the menu. Switched off, the area is not created at all: what sits inside it stays out of the page source and is hidden in the edit window too. Nothing is lost, it all comes back when you switch the area on again. Only with the menu button on the right: on the left, the logo takes over this role. |
 | `bleibtStehen` | Stays put when the menu opens | Left of the hamburger menu | checkbox | `false` | `bleibtAn` == `true` | Off: when the menu opens, the area moves with the page and keeps its distance from the edge of the menu. On: it stays in place next to the menu button; if the menu opens from the right, it sits at the top of the opened menu. Whatever is inside stays usable. |
-| `bleibtAbstand` | Spacing | Left of the hamburger menu | number | `8` | `bleibtAn` == `true` | Distance in pixels to the menu button and, while the menu is open, to the edge of the panel. |
+| `bleibtAbstand` | Spacing | Left of the hamburger menu | number | `8` | `bleibtAn` == `true` | Distance in pixels to the menu button. While the menu is open, the area moves into the button’s place. |
 | `stapeln` | Stacked | View | checkbox | `false` |  | Puts the menu, the area next to the button and the menu button below each other in the edit window instead of side by side. Helps when the window is narrow and everything is squeezed. It changes nothing on the website, there they always sit side by side. |
 | `inhaltZeigen` | Show content | View | checkbox | `true` |  | Shows or hides the bar and its drop zones while you edit. Hidden, only a slim line is left; everything inside stays stored and appears on the website unchanged. Show it again to edit it. |
-| `uiLang` | Language | General | input | `en` |  | Language of all texts: “de” or “en”. The English package has “en” here automatically. |
 
 ## Accepted values for the dropdown fields
 
 Set the **value**, not the label.
+
+**`leisteTag`**: HTML element
+
+| Value | Label |
+|---|---|
+| `div` | div (neutral) |
+| `header` | header (page header) |
 
 **`layout`**: Layout
 
@@ -130,6 +139,14 @@ Set the **value**, not the label.
 | `nein` | use its own JavaScript |
 | `lokal` | load from your own folder |
 | `cdn` | load from someone else’s server |
+
+**`logoMenue`**: Logo in menu
+
+| Value | Label |
+|---|---|
+| `aus` | Off |
+| `steht` | Stays put |
+| `faehrt` | Moves along |
 
 **`logoEinheit`**: Unit
 
